@@ -13,11 +13,11 @@ import SelectFilters from "./SelectFilters.tsx";
 
 const Recipe = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const {recipe, getRecipe, loading, error, refetch} = useGetRecipe();
+    const {recipe, refetch} = useGetRecipe();
 
     const [filter, setFilter] = useState<string | null>(null);
 
-    const {areasList, loading: areasLoading, error: areasError} = useGetAreas();
+    const {areasList} = useGetAreas();
 
     const changeRecipe = async () => {
         if(filter){
